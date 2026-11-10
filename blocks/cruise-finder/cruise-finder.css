@@ -1,0 +1,108 @@
+/* Cruise finder: white floating search panel (values from travel.saga.co.uk #searchControl) */
+.cruise-finder {
+  position: relative;
+  z-index: 11;
+  margin: 0 2px;
+}
+
+.cruise-finder .cruise-finder-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d4d4d4;
+  border-radius: 16px;
+  padding: 20px 20px 15px;
+  background-color: var(--background-color);
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 16%);
+}
+
+.cruise-finder .cruise-finder-field {
+  position: relative;
+}
+
+/* labels stay available to assistive tech; the placeholder option shows the label */
+.cruise-finder .cruise-finder-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.cruise-finder select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin: 0 0 5px;
+  border: 1px solid var(--saga-navy);
+  border-radius: var(--radius);
+  padding: 4px 40px 0 16px;
+  appearance: none;
+  background-color: var(--background-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cpath d='M2 2l8 8 8-8' fill='none' stroke='%231e3282' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: calc(100% - 10px) 22px;
+  background-repeat: no-repeat;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.cruise-finder select:hover,
+.cruise-finder select:focus {
+  border-color: rgb(119 153 208);
+  box-shadow: rgb(119 153 208) 0 0 2px;
+}
+
+.cruise-finder select:focus-visible {
+  outline: 2px solid var(--saga-cyan);
+  outline-offset: 2px;
+}
+
+.cruise-finder .cruise-finder-submit {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  margin: 0 0 5px;
+  border: 1px solid var(--saga-navy);
+  border-radius: var(--radius);
+  padding: 8px 32px;
+  background-color: var(--saga-lavender);
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cruise-finder .cruise-finder-submit:hover,
+.cruise-finder .cruise-finder-submit:focus-visible {
+  background-color: var(--saga-navy);
+  color: var(--background-color);
+}
+
+@media (width >= 900px) {
+  /* the panel floats over the bottom edge of the hero above it */
+  .cruise-finder {
+    margin-top: -51px;
+  }
+
+  /* one equal column per field plus the button, 16px apart */
+  .cruise-finder .cruise-finder-form {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 16px;
+  }
+}

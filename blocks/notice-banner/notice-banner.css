@@ -1,0 +1,79 @@
+/* notice banner: values from source #dmpg-banner computed styles */
+.notice-banner {
+  position: relative;
+  padding: 0 15px 0 16px;
+  border-left: 8px solid #00b95d;
+  color: var(--saga-navy);
+}
+
+.notice-banner .notice-banner-content > * {
+  margin: 0;
+}
+
+.notice-banner .notice-banner-content > * + * {
+  margin-top: 8px;
+}
+
+.notice-banner .notice-banner-content h1,
+.notice-banner .notice-banner-content h2,
+.notice-banner .notice-banner-content h3,
+.notice-banner .notice-banner-content h4,
+.notice-banner .notice-banner-content h5,
+.notice-banner .notice-banner-content h6 {
+  padding-right: 10px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.notice-banner .notice-banner-content p {
+  color: var(--saga-navy);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+/* close: 24px hit area pinned to the box's top right, navy 18px X as on the source x.png */
+.notice-banner .notice-banner-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--saga-navy);
+  cursor: pointer;
+}
+
+.notice-banner .notice-banner-close::before,
+.notice-banner .notice-banner-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 2.5px;
+  border-radius: 2px;
+  background-color: currentcolor;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.notice-banner .notice-banner-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (width >= 600px) {
+  .notice-banner .notice-banner-content h1,
+  .notice-banner .notice-banner-content h2,
+  .notice-banner .notice-banner-content h3,
+  .notice-banner .notice-banner-content h4,
+  .notice-banner .notice-banner-content h5,
+  .notice-banner .notice-banner-content h6 {
+    line-height: 32px;
+  }
+}

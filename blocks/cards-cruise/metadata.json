@@ -1,0 +1,30 @@
+{
+  "variantName": "cards-cruise",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "link + image + heading + text",
+    "purpose": "Horizontally scrolling row of cruise product cards with previous/next arrows and an \"n of N\" counter drawn by the block"
+  },
+  "contentPattern": {
+    "structure": "One row per card: 1) image; 2) details: heading with the itinerary link, region, departure date, nights; 3) offer badge text (optional, may be empty); 4) price line and small print. The arrows and counter are generated, not authored"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_d310300970ff"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/rivers/ships/celebrating-spirit-of-the-rhine.aspx",
+      "/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight-aspx"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use for lists of bookable cruises. The \"n of N\" arrows under the cards are part of this block; do not import them as page text."
+}

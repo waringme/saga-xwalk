@@ -1,0 +1,40 @@
+{
+  "variantName": "breadcrumb-contact-bar",
+  "baseBlock": "custom",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "link + text",
+    "purpose": "Strip under the header with the breadcrumb trail on the left and the booking phone number and opening status on the right"
+  },
+  "contentPattern": {
+    "structure": "Two cells in order (one row of two cells or two rows of one cell): 1) breadcrumb links as a list or paragraph of links; a list item without a link is the current page; 2) contact text, e.g. \"Call us on **0808 258 6779** to book\" and \"We are OPEN | We close at 6pm\""
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_b30544869476",
+    "v_b30544869476-1"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises/cruise-blogs.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/celebrity-guests/david-domoney-visits-canaries-gardens.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/celebrity-guests/stellar-line-up-of-entertainment.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/onboard/a-day-in-the-life-of-captain-simon-moore.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/onboard/the-extra-mile-saga-cruises-hate-hidden-costs.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/rivers/ships/celebrating-spirit-of-the-rhine.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/travel-advice/rivers/new-to-cruising/magic-of-a-mini-river-cruise.aspx",
+      "https://travel.saga.co.uk/cruises",
+      "/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight-aspx",
+      "/cruises/cruise-blogs-aspx",
+      "/cruises"
+    ],
+    "reuseCount": 12,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use once per page, directly under the header, on landing and article pages. Opening status is authored text, not computed."
+}

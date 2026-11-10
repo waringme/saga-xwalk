@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "http://127.0.0.1:8765/cruises/cruise-blogs/experiences/ocean/onboard/a-day-in-the-life-of-captain-simon-moore.aspx",
+  "path": "cruises/cruise-blogs/experiences/ocean/onboard/a-day-in-the-life-of-captain-simon-moore",
+  "timestamp": "2026-11-09T19:22:28.567Z",
+  "title": "A day in the life of Captain Simon Moore | Saga Cruises",
+  "template": "blog-article",
+  "blocks": [
+    "notice-banner",
+    "breadcrumb-contact-bar",
+    "cards-article"
+  ]
+}

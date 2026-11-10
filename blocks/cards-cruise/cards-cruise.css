@@ -1,0 +1,218 @@
+/* values measured from the source .app-GalleryWidget .owl-carousel (computed styles) */
+.cards-cruise {
+  position: relative;
+
+  /* collapses with the heading's bottom margin: 24px between heading and cards, as on source */
+  margin-top: 24px;
+}
+
+.cards-cruise .cards-cruise-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.cards-cruise .cards-cruise-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* card: 1px #d4d4d4 frame, 8px radius, image on top, white content below */
+.cards-cruise .cards-cruise-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #d4d4d4;
+  border-radius: var(--radius);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-snap-align: start;
+}
+
+.cards-cruise .cards-cruise-card-image {
+  line-height: 0;
+}
+
+.cards-cruise .cards-cruise-card-image p {
+  margin: 0;
+}
+
+.cards-cruise .cards-cruise-card-image picture,
+.cards-cruise .cards-cruise-card-image img {
+  display: block;
+  width: 100%;
+}
+
+.cards-cruise .cards-cruise-card-image img {
+  aspect-ratio: 518 / 280;
+  object-fit: cover;
+}
+
+.cards-cruise .cards-cruise-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px 16px 0;
+}
+
+.cards-cruise .cards-cruise-card-body p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: 25.2px;
+}
+
+.cards-cruise .cards-cruise-card-title {
+  margin: 0 0 16px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.cards-cruise .cards-cruise-card-link:any-link {
+  color: var(--saga-navy);
+  text-decoration: none;
+}
+
+/* whole card is clickable via the title link */
+.cards-cruise .cards-cruise-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cards-cruise .cards-cruise-card-body .cards-cruise-card-place {
+  margin-bottom: 16px;
+  padding-left: 24px;
+  background: url('../../icons/location.svg') -4px 0 / 24px no-repeat;
+  color: var(--saga-navy);
+}
+
+/* departure, nights, offer and price sit at the bottom so they line up across cards */
+.cards-cruise .cards-cruise-card-body .cards-cruise-card-departure {
+  margin: auto 0 16px;
+  font-size: var(--body-font-size-s);
+  line-height: 22.4px;
+}
+
+.cards-cruise .cards-cruise-card-offer {
+  margin: 5px 16px 15px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 28px;
+}
+
+.cards-cruise .cards-cruise-card-offer p {
+  display: inline;
+  margin: 0;
+  padding: 8px;
+  border-radius: var(--radius);
+  background-color: #fdddc4;
+}
+
+.cards-cruise .cards-cruise-card-price {
+  padding: 0 16px 16px;
+  font-size: var(--body-font-size-m);
+  line-height: 28px;
+}
+
+.cards-cruise .cards-cruise-card-price p {
+  margin: 4px 0 16px;
+}
+
+.cards-cruise .cards-cruise-card-price p:first-child {
+  margin: 0;
+}
+
+.cards-cruise .cards-cruise-card-price strong {
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* previous / next + "n of N" */
+.cards-cruise .cards-cruise-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.cards-cruise .cards-cruise-controls[hidden] {
+  display: none;
+}
+
+.cards-cruise .cards-cruise-status {
+  padding: 0 4px;
+  color: var(--saga-navy);
+  font-size: var(--body-font-size-m);
+  line-height: 25.2px;
+  text-align: center;
+}
+
+.cards-cruise .cards-cruise-controls button {
+  position: relative;
+  flex: none;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--saga-navy);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  color: var(--saga-navy);
+  cursor: pointer;
+}
+
+.cards-cruise .cards-cruise-controls button:hover {
+  background-color: #aad7d7;
+}
+
+.cards-cruise .cards-cruise-controls button:disabled {
+  border-color: #aad7d7;
+  background-color: var(--background-color);
+  color: #a9d7d9;
+  cursor: default;
+}
+
+.cards-cruise .cards-cruise-controls button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentcolor;
+  mask: url('../../icons/carousel-arrow-right.svg') center / 35px no-repeat;
+}
+
+.cards-cruise .cards-cruise-controls .cards-cruise-prev::after {
+  transform: scaleX(-1);
+}
+
+@media (width >= 600px) {
+  .cards-cruise .cards-cruise-track {
+    grid-auto-columns: calc((100% - 15px) / 2);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-cruise .cards-cruise-track {
+    grid-auto-columns: calc((100% - 45px) / 4);
+  }
+
+  /* arrows and counter sit top right, level with the heading above the block */
+  .cards-cruise .cards-cruise-controls {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    height: 50px;
+    margin: 0;
+  }
+}

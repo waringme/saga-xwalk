@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://127.0.0.1:8765/cruises/cruise-blogs.aspx",
+  "path": "cruises/cruise-blogs",
+  "timestamp": "2026-11-09T19:21:42.436Z",
+  "title": "Blogs from Saga Cruising | Saga Cruises",
+  "template": "blog-landing",
+  "blocks": [
+    "notice-banner",
+    "breadcrumb-contact-bar",
+    "cards-article",
+    "cards-article",
+    "blog-filter",
+    "search-blog"
+  ]
+}

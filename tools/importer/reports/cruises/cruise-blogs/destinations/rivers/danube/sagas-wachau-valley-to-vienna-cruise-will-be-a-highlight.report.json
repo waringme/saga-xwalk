@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "http://127.0.0.1:8765/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight.aspx",
+  "path": "cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight",
+  "timestamp": "2026-11-09T19:22:00.495Z",
+  "title": "Discovering the Danube: Wachau Valley to Vienna",
+  "template": "blog-article",
+  "blocks": [
+    "notice-banner",
+    "breadcrumb-contact-bar",
+    "cards-cruise",
+    "cards-article"
+  ]
+}

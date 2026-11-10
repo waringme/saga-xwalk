@@ -1,0 +1,35 @@
+/* Values from source computed styles (#mobileFilters ul.pills, travel.saga.co.uk) */
+.blog-filter .blog-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-filter .blog-filter-item {
+  margin: 1px;
+}
+
+main .blog-filter a.blog-filter-link:any-link {
+  display: block;
+  margin: 0 16px 8px 0;
+  padding: 6px 16px 4px;
+  border: 1px solid var(--saga-navy);
+  border-radius: 16px;
+  background-color: var(--background-color);
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 22.4px;
+  text-decoration: none;
+}
+
+main .blog-filter a.blog-filter-link:hover,
+main .blog-filter a.blog-filter-link:focus-visible,
+main .blog-filter a.blog-filter-link[aria-current="page"] {
+  background-color: var(--saga-navy);
+  color: var(--background-color);
+  text-decoration: none;
+}

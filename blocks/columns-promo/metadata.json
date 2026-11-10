@@ -1,0 +1,29 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "dense",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "link + image + heading + text",
+    "purpose": "Side-by-side promo offers, each with image, heading, text, a Book now button and a secondary link"
+  },
+  "contentPattern": {
+    "structure": "One row; one cell per offer, each holding image, heading, text, primary button link and optional secondary link (the last standalone link is styled as secondary)"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_63b222318a9a"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises",
+      "/cruises"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use for two or three distinct promotional offers shown together. For repeated look-alike items use cards."
+}

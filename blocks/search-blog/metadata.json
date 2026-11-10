@@ -1,0 +1,29 @@
+{
+  "variantName": "search-blog",
+  "baseBlock": "search",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "heading + field + button",
+    "purpose": "Blog listing title with a labelled keyword search box; results from the query index are listed under the form"
+  },
+  "contentPattern": {
+    "structure": "Cells: 1) heading (optionally followed by a paragraph used as the search label); 2) input placeholder text, e.g. \"e.g. destination\"; 3) optional query index path or link (defaults to /query-index.json). Results are limited to pages under the current page path when any exist"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_585546d848c7"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises/cruise-blogs.aspx",
+      "/cruises/cruise-blogs-aspx"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use at the top of the blog landing page. Requires the article pages to be in the query index."
+}

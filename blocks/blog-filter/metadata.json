@@ -1,0 +1,29 @@
+{
+  "variantName": "blog-filter",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "list + link",
+    "purpose": "Row of category pill links that filter the cruise blog by topic; the link for the current page is highlighted"
+  },
+  "contentPattern": {
+    "structure": "One cell holding a bulleted list (or paragraphs) of category links. The link whose path matches the current page gets aria-current=\"page\""
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_af1e1fe60750"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises/cruise-blogs.aspx",
+      "/cruises/cruise-blogs-aspx"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use for a short row of sibling category or section links shown as pills. Not for primary navigation or long link lists."
+}

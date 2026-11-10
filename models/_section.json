@@ -50,7 +50,19 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "blog-filter",
+        "breadcrumb-contact-bar",
+        "cards-article",
+        "cards-cruise",
+        "carousel-awards",
+        "columns-promo",
+        "columns-image-panel",
+        "cruise-finder",
+        "hero-landing",
+        "newsletter-signup",
+        "notice-banner",
+        "search-blog"
       ]
     }
   ]

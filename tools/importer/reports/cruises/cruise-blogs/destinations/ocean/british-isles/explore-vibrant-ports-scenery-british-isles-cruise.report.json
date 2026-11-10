@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "http://127.0.0.1:8765/cruises/cruise-blogs/destinations/ocean/british-isles/explore-vibrant-ports-scenery-british-isles-cruise.aspx",
+  "path": "cruises/cruise-blogs/destinations/ocean/british-isles/explore-vibrant-ports-scenery-british-isles-cruise",
+  "timestamp": "2026-11-09T19:21:51.061Z",
+  "title": "Explore vibrant ports and stunning scenery on a British Isles cruise",
+  "template": "blog-article",
+  "blocks": [
+    "notice-banner",
+    "breadcrumb-contact-bar",
+    "cards-article"
+  ]
+}

@@ -15,13 +15,55 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "blog-filter",
+      "breadcrumb-contact-bar",
+      "cards-article",
+      "cards-cruise",
+      "carousel-awards",
+      "columns-promo",
+      "columns-image-panel",
+      "cruise-finder",
+      "hero-landing",
+      "newsletter-signup",
+      "notice-banner",
+      "search-blog"
+    ]
+  },
+  {
+    "id": "cards-article",
+    "components": [
+      "cards-article-item"
+    ]
+  },
+  {
+    "id": "cards-cruise",
+    "components": [
+      "cards-cruise-item"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "carousel-awards",
+    "components": [
+      "carousel-awards-item"
+    ]
+  },
+  {
+    "id": "columns-image-panel",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "columns-promo",
+    "components": [
+      "column"
     ]
   },
   {
@@ -37,6 +79,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "cruise-finder",
+    "components": [
+      "cruise-finder-item"
     ]
   }
 ]

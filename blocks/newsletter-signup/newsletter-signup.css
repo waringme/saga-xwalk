@@ -1,0 +1,215 @@
+/* Block: newsletter-signup -- values from travel.saga.co.uk/cruises #email-only-banner computed styles */
+
+/* teal band spanning the full 1140px box, with the marble accent strip below it */
+.newsletter-signup {
+  position: relative;
+  margin: 0 calc(-1 * var(--content-padding)) 16px;
+  padding: 16px;
+  background-color: #aad7d7;
+}
+
+.newsletter-signup::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  height: 16px;
+  background: url('./marble-accent.webp') 50% 0;
+}
+
+/* white card */
+.newsletter-signup .newsletter-signup-panel {
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: var(--radius);
+  background-color: var(--background-color);
+}
+
+/* envelope icon in a light teal circle (desktop only) */
+.newsletter-signup .newsletter-signup-icon {
+  display: none;
+}
+
+/* source centres the icon with 16px of trailing space, so it sits 8px above centre */
+.newsletter-signup .newsletter-signup-icon p {
+  margin: 0 0 16px;
+  line-height: 0;
+}
+
+.newsletter-signup .newsletter-signup-icon img {
+  width: 100px;
+  height: 100px;
+}
+
+/* heading with the lilac accent bar */
+.newsletter-signup .newsletter-signup-intro h2 {
+  position: relative;
+  margin: 0 0 8px;
+  padding: 8px 0 0 24px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.newsletter-signup .newsletter-signup-intro h2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16px;
+  border-radius: 4px;
+  background-color: #d6c0dc;
+}
+
+.newsletter-signup .newsletter-signup-intro p,
+.newsletter-signup .newsletter-signup-note p {
+  margin: 0 0 16px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.newsletter-signup .newsletter-signup-note a:any-link {
+  color: var(--link-color);
+  font-family: var(--semibold-font-family);
+  text-decoration: underline;
+}
+
+.newsletter-signup .newsletter-signup-note a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* form */
+.newsletter-signup .newsletter-signup-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0 0 32px;
+}
+
+.newsletter-signup .newsletter-signup-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.newsletter-signup .newsletter-signup-form input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 4px 16px 0;
+  border: 1px solid var(--saga-navy);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: #616fa7;
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 20px;
+}
+
+.newsletter-signup .newsletter-signup-form input::placeholder {
+  color: #616fa7;
+  opacity: 1;
+}
+
+.newsletter-signup .newsletter-signup-email-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.newsletter-signup .newsletter-signup-submit {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 8px 32px;
+  border: 1px solid var(--saga-navy);
+  border-radius: var(--radius);
+  background-color: var(--saga-navy);
+  color: var(--background-color);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-signup .newsletter-signup-submit:hover,
+.newsletter-signup .newsletter-signup-submit:focus-visible {
+  background-color: var(--link-hover-color);
+}
+
+@media (width >= 600px) {
+  .newsletter-signup .newsletter-signup-panel {
+    display: flex;
+    max-width: 1022px;
+    margin: 0 auto;
+  }
+
+  .newsletter-signup .newsletter-signup-content {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .newsletter-signup .newsletter-signup-intro h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .newsletter-signup .newsletter-signup-form {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    max-width: 632px;
+    margin-bottom: 24px;
+  }
+
+  .newsletter-signup .newsletter-signup-email-row {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .newsletter-signup .newsletter-signup-email-row .newsletter-signup-field {
+    flex: 0 0 66.6667%;
+  }
+
+  .newsletter-signup .newsletter-signup-field-email input {
+    border-radius: 8px 0 0 8px;
+  }
+
+  .newsletter-signup .newsletter-signup-submit {
+    flex: 1 1 auto;
+    width: auto;
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+@media (width >= 900px) {
+  .newsletter-signup {
+    padding: 48px;
+  }
+
+  .newsletter-signup .newsletter-signup-icon {
+    display: flex;
+    flex: 0 0 150px;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    height: 150px;
+    margin-right: 24px;
+    border-radius: 80px;
+    background-color: var(--saga-light-teal);
+  }
+}

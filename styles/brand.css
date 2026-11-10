@@ -1,0 +1,69 @@
+/* Saga Cruises brand tokens, measured from travel.saga.co.uk (computed styles) */
+:root {
+  /* brand colors */
+  --saga-navy: #1e3282;
+  --saga-cyan: #00a5e1;
+  --saga-lavender: #e8eaf2;
+  --saga-light-green: #ebf9f4;
+  --saga-light-teal: #e5f3f3;
+  --saga-light-grey: #f6f8f8;
+
+  /* colors */
+  --background-color: #fff;
+  --light-color: var(--saga-light-grey);
+  --dark-color: #505050;
+  --text-color: #232323;
+  --heading-color: var(--saga-navy);
+  --link-color: var(--saga-navy);
+  --link-hover-color: #0056b3;
+  --link-hover-underline-color: var(--saga-cyan);
+
+  /* fonts: Saga ships each Ambit weight as its own family */
+  --body-font-family: ambit-regular, ambit-fallback, helvetica, arial, sans-serif;
+  --semibold-font-family: ambit-semibold, ambit-fallback, helvetica, arial, sans-serif;
+  --bold-font-family: ambit-bold, ambit-fallback, helvetica, arial, sans-serif;
+  --display-font-family: ambit-black, ambit-fallback, helvetica, arial, sans-serif;
+  --heading-font-family: var(--semibold-font-family);
+
+  /* body sizes */
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+  --body-line-height: 28px;
+
+  /* heading sizes (mobile) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* layout */
+  --content-max-width: 1140px;
+  --content-padding: 15px;
+  --section-spacing: 40px;
+  --radius: 8px;
+
+  /* nav height */
+  --nav-height: 74px;
+}
+
+@media (width >= 900px) {
+  :root {
+    /* heading sizes (desktop) */
+    --heading-font-size-xxl: 48px;
+    --heading-font-size-xl: 40px;
+    --heading-font-size-l: 32px;
+    --heading-font-size-m: 24px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
+  }
+}
+
+@media (width >= 1200px) {
+  :root {
+    /* desktop header bar */
+    --nav-height: 104px;
+  }
+}

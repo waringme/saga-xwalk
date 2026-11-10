@@ -1,0 +1,215 @@
+/* cards-article
+ * default: compact related-article cards (image + linked title), 6-up on desktop
+ * default with category/summary: article listing cards, 4-up on desktop
+ * tiles: category tiles (square rounded image + title), no card surface
+ */
+
+.cards-article > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* card surface */
+.cards-article .cards-article-card {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #d9e1e2;
+  border-radius: var(--radius);
+  background-color: var(--saga-light-grey);
+}
+
+.cards-article .cards-article-card:hover {
+  box-shadow: 0 1px 25px 0 #dcdcdc;
+}
+
+/* image: compact cards sit image-left on mobile */
+.cards-article .cards-article-card-image {
+  flex: 0 0 50%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.cards-article .cards-article-card-image p {
+  margin: 0;
+}
+
+.cards-article .cards-article-card-image picture,
+.cards-article .cards-article-card-image img {
+  display: block;
+  width: 100%;
+}
+
+.cards-article .cards-article-card-image img {
+  height: auto;
+  object-fit: cover;
+}
+
+.cards-article .cards-article-card-body {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.cards-article .cards-article-card-body > * {
+  margin: 0;
+}
+
+.cards-article .cards-article-card-title {
+  margin: 0 0 8px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: var(--heading-font-size-s);
+  line-height: 24px;
+}
+
+/* whole card is clickable via the title link */
+.cards-article .cards-article-card-link:any-link {
+  color: var(--saga-navy);
+}
+
+.cards-article .cards-article-card-link:hover {
+  text-decoration: none;
+}
+
+.cards-article .cards-article-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* tiles: square rounded image + title, no card surface.
+ * source: 15px intro margin + 40px pod margin above the tiles (collapses with the 16px p margin) */
+.cards-article.tiles {
+  margin-top: 55px;
+}
+
+.cards-article.tiles > ul {
+  gap: 16px 30px;
+}
+
+.cards-article.tiles .cards-article-card {
+  flex-direction: column;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.cards-article.tiles .cards-article-card:hover {
+  box-shadow: none;
+}
+
+.cards-article.tiles .cards-article-card-image {
+  flex: none;
+}
+
+.cards-article.tiles .cards-article-card-image img {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+}
+
+.cards-article.tiles .cards-article-card-body {
+  padding: 8px 8px 8px 0;
+}
+
+.cards-article.tiles .cards-article-card-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* article listing cards: category tag + title + summary */
+.cards-article:not(.tiles) > ul:has(.cards-article-card-category, .cards-article-card-title ~ p) {
+  justify-items: center;
+}
+
+.cards-article:not(.tiles) .cards-article-card:has(.cards-article-card-category, .cards-article-card-title ~ p) {
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+
+.cards-article:not(.tiles) .cards-article-card:has(.cards-article-card-category, .cards-article-card-title ~ p) .cards-article-card-image {
+  flex: none;
+  height: 160px;
+}
+
+.cards-article:not(.tiles) .cards-article-card:has(.cards-article-card-category, .cards-article-card-title ~ p) .cards-article-card-body {
+  padding: 15px;
+}
+
+.cards-article .cards-article-card-body > .cards-article-card-category {
+  margin: 0 0 2px;
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.cards-article:not(.tiles) .cards-article-card:has(.cards-article-card-category, .cards-article-card-title ~ p) .cards-article-card-title {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.cards-article .cards-article-card-body > .cards-article-card-title ~ p {
+  margin: 0 0 16px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+@media (width >= 600px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-article .cards-article-card {
+    flex-direction: column;
+  }
+
+  .cards-article .cards-article-card-image {
+    flex: none;
+  }
+
+  .cards-article .cards-article-card-title {
+    font-size: var(--heading-font-size-xs);
+  }
+
+  .cards-article.tiles > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-article:not(.tiles) > ul:has(.cards-article-card-category, .cards-article-card-title ~ p) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cards-article.tiles > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards-article:not(.tiles) > ul:has(.cards-article-card-category, .cards-article-card-title ~ p) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-article.tiles .cards-article-card-title {
+    line-height: 40px;
+  }
+}
+
+@media (width >= 1200px) {
+  .cards-article:not(.tiles) > ul:has(.cards-article-card-category, .cards-article-card-title ~ p) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,136 @@
+/* Award badges carousel. Values measured from travel.saga.co.uk .carouselLogo .owl-carousel */
+.carousel-awards .carousel-awards-slides-container {
+  position: relative;
+  padding: 0 80px;
+}
+
+.carousel-awards .carousel-awards-slides {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-awards .carousel-awards-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-awards .carousel-awards-slide {
+  padding: 0 20px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.carousel-awards .carousel-awards-slide-image,
+.carousel-awards .carousel-awards-slide-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.carousel-awards .carousel-awards-slide-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-awards .carousel-awards-slide-content h5 {
+  margin: 16px 0 8px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: var(--heading-font-size-s);
+  line-height: 24px;
+  text-align: center;
+}
+
+.carousel-awards .carousel-awards-slide-content h5 a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carousel-awards .carousel-awards-slide-content p {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.carousel-awards .carousel-awards-navigation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.carousel-awards .carousel-awards-navigation[hidden] {
+  display: none;
+}
+
+.carousel-awards .carousel-awards-navigation button {
+  position: absolute;
+  top: calc(50% - 50px);
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--saga-navy);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  color: var(--saga-navy);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.carousel-awards .carousel-awards-navigation .carousel-awards-prev {
+  left: 0;
+}
+
+.carousel-awards .carousel-awards-navigation .carousel-awards-next {
+  right: 0;
+}
+
+.carousel-awards .carousel-awards-navigation button:hover {
+  background-color: #aad7d7;
+}
+
+.carousel-awards .carousel-awards-navigation button:disabled {
+  border-color: #aad7d7;
+  background-color: var(--background-color);
+  color: #a9d7d9;
+  cursor: default;
+}
+
+.carousel-awards .carousel-awards-navigation button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentcolor;
+  mask: url('../../icons/carousel-arrow-right.svg') center / 35px no-repeat;
+}
+
+.carousel-awards .carousel-awards-navigation .carousel-awards-prev::after {
+  transform: rotate(180deg);
+}
+
+@media (width >= 600px) {
+  .carousel-awards .carousel-awards-slides {
+    grid-auto-columns: 50%;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-awards .carousel-awards-slides {
+    grid-auto-columns: calc(100% / 3);
+  }
+}
+
+@media (width >= 1200px) {
+  .carousel-awards .carousel-awards-slides {
+    grid-auto-columns: 25%;
+  }
+}

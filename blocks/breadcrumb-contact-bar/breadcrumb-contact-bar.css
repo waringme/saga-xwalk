@@ -1,0 +1,123 @@
+/* breadcrumb + contact bar: values from travel.saga.co.uk .breadcrumbUtility computed styles */
+.breadcrumb-contact-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  color: var(--saga-navy);
+}
+
+/* phone number */
+.breadcrumb-contact-bar .breadcrumb-contact-bar-contact a:any-link {
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+}
+
+/* source hides the breadcrumb trail on small screens */
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb {
+  display: none;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb li {
+  display: inline;
+}
+
+/* chevron separator: 20px between crumbs */
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb li + li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 8px 0 5px;
+  border: solid var(--saga-navy);
+  border-width: 2px 2px 0 0;
+  vertical-align: 1px;
+  transform: rotate(45deg);
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb a:any-link {
+  display: inline-block;
+  color: var(--saga-navy);
+  font-family: var(--bold-font-family);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb span {
+  color: var(--saga-navy);
+}
+
+/* first crumb: teal pill */
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb li:first-child > a:any-link,
+.breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb li:first-child > span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: #aad7d7;
+  font-family: var(--body-font-family);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-contact {
+  margin: 10px 0;
+  color: var(--saga-navy);
+  font-size: 14px;
+  text-align: center;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-contact p {
+  margin: 0;
+  line-height: 20px;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-contact p:first-child {
+  line-height: 24px;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-status {
+  font-family: var(--semibold-font-family);
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-status.is-open {
+  color: #009049;
+}
+
+.breadcrumb-contact-bar .breadcrumb-contact-bar-status.is-closed {
+  color: #de2e32;
+}
+
+@media (width >= 900px) {
+  .breadcrumb-contact-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 64px;
+    padding: 0;
+  }
+
+  .breadcrumb-contact-bar .breadcrumb-contact-bar-breadcrumb {
+    display: block;
+    flex: 0 1 auto;
+    max-width: calc((100% + 30px) * 7 / 12 - 46px);
+    padding: 8px 0 8px 1px;
+  }
+
+  .breadcrumb-contact-bar .breadcrumb-contact-bar-contact {
+    flex: 0 0 auto;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .breadcrumb-contact-bar .breadcrumb-contact-bar-contact p:first-child {
+    font-size: 16px;
+  }
+}

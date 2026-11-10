@@ -1,272 +1,698 @@
-/* header and nav layout */
+/* Saga global header -- values from travel.saga.co.uk (#gn21) computed styles */
+
+/* ---------- base (mobile) ---------- */
 header .nav-wrapper {
+  position: relative;
+  z-index: 20;
   background-color: var(--background-color);
-  width: 100%;
-  z-index: 2;
-  position: fixed;
 }
 
 header nav {
   box-sizing: border-box;
   display: grid;
   grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+    'brand tools hamburger' var(--nav-height)
+    'sections sections sections' auto / 1fr auto auto;
   align-items: center;
-  gap: 0 24px;
+  gap: 0 16px;
+  max-width: 1440px;
   margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
-  font-family: var(--body-font-family);
+  padding: 0 16px;
+  font-family: ambit, ambit-fallback, helvetica, arial, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--saga-navy);
 }
 
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
-}
-
-@media (width >= 900px) {
-  header .nav-wrapper {
-    position: relative;
-  }
-
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
-}
-
-header nav p {
+header nav ul {
   margin: 0;
-  line-height: 1;
+  padding: 0;
+  list-style: none;
 }
 
-header nav a:any-link {
-  color: currentcolor;
-}
-
-/* hamburger */
-header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
-  display: flex;
-  align-items: center;
-}
-
-header nav .nav-hamburger button {
-  height: 22px;
+header nav button {
   margin: 0;
   border: 0;
-  border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background: none;
   color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 20px;
-}
-
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  content: '';
-  position: absolute;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
-  width: 24px;
-  height: 2px;
-  border-radius: 2px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
-  transform: rotate(-45deg);
-}
-
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
+header nav a {
+  color: var(--saga-navy);
+  text-decoration: none;
 }
 
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
 }
 
-header nav .nav-brand img {
-  width: 128px;
+header .nav-brand a {
+  position: relative;
+  display: block;
+}
+
+header .nav-brand img {
+  display: block;
+  width: 88px;
   height: auto;
 }
 
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
+/* tools: MySaga button (icon only on mobile) */
+header .nav-tools {
+  grid-area: tools;
 }
 
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
+header nav .nav-tools a.nav-account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 48px;
+  height: 52px;
+  border-radius: var(--radius);
+  background-color: #aad7d7;
+  font-weight: 500;
+  text-decoration: none;
 }
 
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
+header .nav-tools img {
+  width: 24px;
+  height: 25px;
+  vertical-align: top;
 }
 
-header nav .nav-sections ul > li {
+header .nav-account-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* hamburger: four bars that morph into a cross, with a Menu / Close label */
+header .nav-hamburger {
+  grid-area: hamburger;
+  display: flex;
+}
+
+header .nav-hamburger button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  box-sizing: border-box;
+  height: 53px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0 13px;
   font-weight: 500;
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+header nav[aria-expanded='true'] .nav-hamburger button {
+  border-color: var(--saga-navy);
 }
 
-header nav .nav-sections ul > li > ul > li {
+header .nav-hamburger-icon {
+  position: relative;
+  width: 24px;
+  height: 19px;
+}
+
+header .nav-hamburger-icon span {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--saga-navy);
+  transition: all 0.25s ease-in-out;
+}
+
+header .nav-hamburger-icon span:nth-child(1) {
+  top: 0;
+}
+
+header .nav-hamburger-icon span:nth-child(2),
+header .nav-hamburger-icon span:nth-child(3) {
+  top: 8px;
+}
+
+header .nav-hamburger-icon span:nth-child(4) {
+  top: 16px;
+}
+
+header nav[aria-expanded='true'] .nav-hamburger-icon span:nth-child(1),
+header nav[aria-expanded='true'] .nav-hamburger-icon span:nth-child(4) {
+  top: 8px;
+  left: 50%;
+  width: 0;
+}
+
+header nav[aria-expanded='true'] .nav-hamburger-icon span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+header nav[aria-expanded='true'] .nav-hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* sections: full-height slide-in levels under the bar on mobile */
+@keyframes nav-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+header .nav-sections {
+  grid-area: sections;
+  display: none;
+}
+
+header nav[aria-expanded='true'] .nav-sections {
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100dvh - var(--nav-height));
+  padding: 16px 0;
+  overflow-y: auto;
+  background-color: #aad7d7;
+  animation: nav-slide-in 0.5s;
+}
+
+header nav.panel-open .nav-sections {
+  padding: 0;
+}
+
+header .nav-top-trigger,
+header .nav-sidebar-trigger,
+header .nav-back {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px 48px 16px 24px;
+}
+
+/* chevrons on every row that leads somewhere */
+header .nav-top-trigger::after,
+header .nav-sidebar-trigger::after,
+header .nav-sidebar-secondary a::after,
+header .nav-col-links a::after,
+header .nav-back::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid currentcolor;
+  border-right: 2px solid currentcolor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+header .nav-back::before {
+  right: auto;
+  left: 26px;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+header .nav-panel,
+header .nav-detail[hidden],
+header .nav-close {
+  display: none;
+}
+
+header .nav-top-item.open > .nav-top-trigger {
+  display: none;
+}
+
+header nav.panel-open .nav-top-item:not(.open) {
+  display: none;
+}
+
+header .nav-top-item.open .nav-panel {
+  display: block;
+  min-height: 100%;
+  animation: nav-slide-in 0.5s;
+}
+
+header .nav-top-item:not(.drilled) .nav-details {
+  display: none;
+}
+
+/* level 2: the section's menu */
+header .nav-sidebar {
+  min-height: calc(100dvh - var(--nav-height));
+  padding-bottom: 24px;
+  background-color: #d4ebeb;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+header .nav-top-item.drilled .nav-sidebar {
+  display: none;
+}
+
+header .nav-back {
+  padding: 16px 24px 16px 54px;
+  background-color: #aad7d7;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+header .nav-sidebar-list {
+  padding: 15px 0;
+}
+
+/* level 3: the detail panel */
+header .nav-top-item.drilled .nav-details {
+  min-height: calc(100dvh - var(--nav-height));
+  background-color: #f6fbfb;
+  animation: nav-slide-in 0.5s;
+}
+
+header .nav-detail {
+  padding: 0 16px 24px;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+header .nav-detail .nav-back {
+  width: calc(100% + 32px);
+  margin: 0 -16px 16px;
+  background-color: #e5f3f3;
   font-weight: 400;
 }
 
-@media (width >= 900px) {
-  header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
-  }
+header .nav-sidebar-secondary {
+  margin: 0 16px;
+  border-top: 1px solid rgb(30 50 130 / 30%);
+  padding-top: 8px;
+  font-size: 18px;
+  line-height: 25.2px;
+}
 
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
+header .nav-sidebar-secondary a {
+  position: relative;
+  display: block;
+  padding: 16px 32px 16px 42px;
+}
 
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
+/* sales phone line with open/closed status */
+header .nav-contact {
+  margin: 0 16px;
+  border-top: 1px solid rgb(30 50 130 / 30%);
+  padding: 23px 0;
+  font-size: 18px;
+  line-height: 25.2px;
+}
 
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
+header nav a.nav-contact-link {
+  display: block;
+}
 
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
+header .nav-contact-link img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  vertical-align: -3px;
+}
 
-  header nav .nav-sections ul {
+header .nav-contact-number {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33.6px;
+}
+
+header .nav-contact-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 8px 0 0 30px;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+header .nav-contact-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #de2e32;
+}
+
+header .nav-contact-status.is-open .nav-contact-dot {
+  background-color: #009049;
+}
+
+/* detail panel content */
+header .nav-detail-title {
+  margin: 0 0 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33.6px;
+  text-transform: uppercase;
+}
+
+header .nav-view-all-wrapper {
+  margin: 0 0 16px;
+}
+
+header nav a.nav-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: var(--radius);
+  padding: 16px 32px 15px;
+  background-color: var(--saga-light-teal);
+  box-shadow: inset 0 0 0 2px var(--saga-navy);
+  font-size: 14.2px;
+  line-height: 17px;
+}
+
+header nav a.nav-view-all::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentcolor;
+  border-right: 2px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+/* three across at most, shrinking on narrower desktops */
+header .nav-cards,
+header .nav-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 32px;
+}
+
+header .nav-card {
+  box-sizing: border-box;
+  margin-bottom: 32px;
+  border: 1px solid #d4d4d4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+header .nav-card-image {
+  height: 244px;
+  background-color: #d4ebeb;
+}
+
+header .nav-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header .nav-card-contents {
+  padding: 16px;
+}
+
+header nav a.nav-card-label {
+  display: block;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33.6px;
+}
+
+header .nav-card-desc p {
+  margin: 8px 0 16px;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+header .nav-col {
+  margin-bottom: 32px;
+}
+
+header .nav-col-heading {
+  display: block;
+  margin: 0 0 24px;
+  font-weight: 600;
+}
+
+header .nav-col-links {
+  margin-bottom: 24px;
+}
+
+header .nav-col-links a {
+  position: relative;
+  display: block;
+  padding: 16px 32px 16px 8px;
+}
+
+/* ---------- desktop ---------- */
+@media (width >= 1200px) {
+  /* links overlap by their padding, leaving 16px between labels, as on the source */
+  header .nav-top-trigger {
+    box-sizing: content-box;
     display: flex;
-    gap: 24px;
+    width: auto;
+    margin-left: -16px;
+    padding: 16px;
+  }
+
+  header .nav-sidebar {
+    box-sizing: border-box;
+    min-height: 0;
+    padding: 16px 40px 16px max(96px, calc(50% - 624px));
+    background-color: #aad7d7;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  header .nav-sidebar-list {
+    padding: 0;
+  }
+
+  header nav {
+    grid-template: 'brand sections tools' var(--nav-height) / auto 1fr auto;
+    gap: 0;
+    max-width: none;
+    padding: 0 96px;
+  }
+
+  header .nav-brand a {
+    padding: 11px 0;
+  }
+
+  header .nav-brand img {
+    width: 118px;
+  }
+
+  header .nav-hamburger {
+    display: none;
+  }
+
+  header nav .nav-tools a.nav-account {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 12px 24px 14px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  header .nav-tools img {
+    margin-right: 5px;
+  }
+
+  header .nav-account-label {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
+
+  /* top-level sections: centred row, 16px apart */
+  header .nav-sections,
+  header nav[aria-expanded='true'] .nav-sections {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: none;
+    animation: none;
+  }
+
+  /* no row chevrons on desktop */
+  header .nav-top-trigger::after,
+  header .nav-sidebar-trigger::after,
+  header .nav-sidebar-secondary a::after,
+  header .nav-col-links a::after {
+    display: none;
+  }
+
+  header .nav-top-item.open .nav-panel,
+  header .nav-top-item.drilled .nav-details {
+    min-height: 0;
+    animation: none;
+  }
+
+  header .nav-top-item.drilled .nav-details {
+    background: none;
+  }
+
+  header .nav-col-links a {
+    padding: 16px 0;
+  }
+
+  header .nav-top {
+    display: flex;
+    justify-content: center;
+  }
+
+  header .nav-top-item.open > .nav-top-trigger,
+  header nav.panel-open .nav-top-item:not(.open) {
+    display: block;
+  }
+
+  header .nav-top-item.open > .nav-top-trigger {
+    font-weight: 600;
+  }
+
+  /* megamenu: full-width panel under the header bar, teal sidebar + light teal detail */
+  header .nav-top-item.open .nav-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: grid;
+    grid-template-columns: max(380px, calc(50% - 260px)) 1fr;
+    width: 100%;
+    background-color: #d4ebeb;
+    animation: none;
+  }
+
+  header .nav-top-item .nav-back,
+  header .nav-top-item.drilled .nav-sidebar,
+  header .nav-top-item:not(.drilled) .nav-details {
+    display: block;
+  }
+
+  header .nav-top-item .nav-back {
+    display: none;
+  }
+
+  header .nav-sidebar-item {
+    position: relative;
+  }
+
+  header .nav-sidebar-trigger {
+    padding: 16px 0;
+  }
+
+  /* active item: navy bar on the left, notch pointing into the detail panel */
+  header .nav-sidebar-item.active .nav-sidebar-trigger {
+    font-weight: 600;
+  }
+
+  header .nav-sidebar-item.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -24px;
+    width: 8px;
+    height: 100%;
+    background-color: var(--saga-navy);
+  }
+
+  header .nav-sidebar-item.active::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: -40px;
+    width: 16px;
+    height: 32px;
+    background-color: #d4ebeb;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  }
+
+  header .nav-sidebar-secondary {
+    margin: 0;
+    padding-top: 23px;
+  }
+
+  header .nav-contact {
     margin: 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
+  header .nav-sidebar-secondary a {
+    padding: 16px 0 16px 34px;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
+  header .nav-detail {
+    padding: 32px 96px 32px 32px;
+    background: none;
+    font-size: 20px;
+    line-height: 28px;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
+  header .nav-cards,
+  header .nav-columns {
+    grid-template-columns: repeat(3, minmax(0, 249px));
+  }
+
+  /* panels without a "Go to" button keep its space, as on the source */
+  header .nav-detail:not(:has(.nav-view-all-wrapper)) .nav-detail-title {
+    margin-top: 46px;
+  }
+
+  header .nav-close {
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
+    top: 30px;
+    right: 108px;
+    display: block;
+    width: 32px;
+    height: 32px;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+  header .nav-close::before,
+  header .nav-close::after {
     content: '';
     position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    top: 15px;
+    left: 0;
+    width: 32px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--saga-navy);
+    transform: rotate(45deg);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+  header .nav-close::after {
+    transform: rotate(-45deg);
   }
 }
 
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
+/* link hover, last so it applies over the link styles above */
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header nav .nav-brand a:hover,
+header nav a.nav-view-all:hover,
+header nav a.nav-account:hover {
+  text-decoration: none;
 }

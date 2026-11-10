@@ -1,0 +1,29 @@
+{
+  "variantName": "carousel-awards",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "dense",
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "link + image + heading + text + button",
+    "purpose": "Row of award badges with title and description, several in view, scrolled with previous/next arrows"
+  },
+  "contentPattern": {
+    "structure": "One row per award: 1) badge image; 2) title (heading) and description"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_ff5f29cfc523"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises",
+      "/cruises"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use for award or accreditation badges. For full-width slides use a hero-style carousel instead."
+}

@@ -1,0 +1,129 @@
+/* full-bleed hero: lift the section's content max-width for this wrapper only */
+main > .section > .hero-landing-wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* mobile: photo on top (3:2), title below in navy; badge and tagline hidden (as source) */
+.hero-landing {
+  position: relative;
+  max-width: 2000px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+.hero-landing .hero-landing-media {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.hero-landing .hero-landing-media picture,
+.hero-landing .hero-landing-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-landing .hero-landing-media img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero-landing .hero-landing-content {
+  position: relative;
+  padding: 25px 35px 25px 15px;
+  text-align: left;
+}
+
+.hero-landing .hero-landing-content > * {
+  margin: 0;
+}
+
+.hero-landing .hero-landing-content > :not(.hero-landing-title) {
+  display: none;
+}
+
+.hero-landing .hero-landing-title {
+  margin: 0 0 8px;
+  color: var(--saga-navy);
+  font-family: var(--display-font-family);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.hero-landing .hero-landing-badge {
+  line-height: 0;
+}
+
+.hero-landing .hero-landing-badge img {
+  display: inline;
+  width: 240px;
+  max-width: 100%;
+  height: 200px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.hero-landing .hero-landing-content > p:not(.hero-landing-badge) {
+  max-width: 50%;
+  margin: 0 0 16px;
+  color: #fff;
+  font-family: var(--display-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-shadow: rgb(0 0 0 / 50%) 2px 2px 5px;
+}
+
+.hero-landing .hero-landing-content > p:not(.hero-landing-badge) a:any-link {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.hero-landing .hero-landing-content > p:not(.hero-landing-badge) a:hover {
+  text-decoration: underline;
+}
+
+/* desktop: photo fills a 650px band, centred white title + badge + tagline over it */
+@media (width >= 900px) {
+  .hero-landing {
+    display: flex;
+    justify-content: center;
+    height: 650px;
+    overflow: hidden;
+  }
+
+  .hero-landing .hero-landing-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    aspect-ratio: auto;
+  }
+
+  .hero-landing .hero-landing-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding: 54px 15px 0;
+    text-align: center;
+  }
+
+  .hero-landing .hero-landing-content > :not(.hero-landing-title) {
+    display: block;
+  }
+
+  .hero-landing .hero-landing-title {
+    color: #fff;
+    font-size: 56px;
+    line-height: 56px;
+    text-shadow: rgb(0 0 0 / 50%) 2px 2px 5px;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "http://127.0.0.1:8765/cruises",
+  "path": "cruises",
+  "timestamp": "2026-11-09T19:18:39.279Z",
+  "title": "Saga Cruises – Cruises for over 50s",
+  "template": "homepage",
+  "blocks": [
+    "notice-banner",
+    "breadcrumb-contact-bar",
+    "hero-landing",
+    "cruise-finder",
+    "columns-promo",
+    "columns-promo",
+    "columns-promo",
+    "carousel-awards",
+    "columns-image-panel",
+    "columns-image-panel",
+    "newsletter-signup"
+  ]
+}

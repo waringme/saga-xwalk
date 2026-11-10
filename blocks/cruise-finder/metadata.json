@@ -1,0 +1,29 @@
+{
+  "variantName": "cruise-finder",
+  "baseBlock": "custom",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "dense",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "text + list + field",
+    "purpose": "Cruise search panel with select boxes (cruise type, region, date, passengers) and a Search button that sends the choices to a results page"
+  },
+  "contentPattern": {
+    "structure": "Optional action row: a single link (text = button label, href = results page). Then one row per select: 1) field label (also the empty first option); 2) bulleted list of options; a bold item is preselected, \"Label|value\" sets an explicit value"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_85a7474c5f06"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises",
+      "/cruises"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use under the landing hero. Option lists are authored; the block does not load live availability."
+}

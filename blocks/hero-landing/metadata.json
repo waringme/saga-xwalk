@@ -1,0 +1,29 @@
+{
+  "variantName": "hero-landing",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "list + image + heading + link + text",
+    "purpose": "Full-width landing hero: background photo, large title, award badge image and tagline"
+  },
+  "contentPattern": {
+    "structure": "Background image first, then title heading, award badge image and tagline, in that order. The first picture is the background; any later picture is a badge"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_07fdb74cbd70"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises",
+      "/cruises"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use once at the top of a landing page. For article heroes use the hero block."
+}

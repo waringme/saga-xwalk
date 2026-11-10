@@ -1,0 +1,40 @@
+{
+  "variantName": "notice-banner",
+  "baseBlock": "custom",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "heading + text",
+    "purpose": "Dismissible notice strip with accent bar, heading, text and a close button; dismissal lasts for the browser session"
+  },
+  "contentPattern": {
+    "structure": "One cell: heading and text"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "v_cc55a79f05ce"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "https://travel.saga.co.uk/cruises",
+      "https://travel.saga.co.uk/cruises/cruise-blogs.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/destinations/ocean/british-isles/explore-vibrant-ports-scenery-british-isles-cruise.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/celebrity-guests/david-domoney-visits-canaries-gardens.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/celebrity-guests/stellar-line-up-of-entertainment.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/onboard/a-day-in-the-life-of-captain-simon-moore.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/onboard/the-extra-mile-saga-cruises-hate-hidden-costs.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/rivers/ships/celebrating-spirit-of-the-rhine.aspx",
+      "https://travel.saga.co.uk/cruises/cruise-blogs/travel-advice/rivers/new-to-cruising/magic-of-a-mini-river-cruise.aspx",
+      "/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight-aspx",
+      "/cruises/cruise-blogs-aspx",
+      "/cruises"
+    ],
+    "reuseCount": 13,
+    "lastUsed": "2026-11-09"
+  },
+  "reuseGuidance": "Use for short site-wide notices such as guarantees or service messages. Not for promotional content."
+}

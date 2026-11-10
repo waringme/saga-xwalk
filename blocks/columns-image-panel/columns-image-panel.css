@@ -1,0 +1,188 @@
+/* Block: columns-image-panel -- values from travel.saga.co.uk (.fullwidthimageComponent) computed styles */
+
+/* mobile: a bordered card -- photo, heading tab, then the text */
+.columns-image-panel {
+  margin-top: 40px;
+  border: 1px solid #d4d4d4;
+  border-radius: var(--radius);
+}
+
+.columns-image-panel > .columns-image-panel-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.columns-image-panel .columns-image-panel-media {
+  order: -1;
+  line-height: 0;
+}
+
+.columns-image-panel .columns-image-panel-media p {
+  margin: 0;
+}
+
+.columns-image-panel .columns-image-panel-media picture {
+  display: block;
+}
+
+.columns-image-panel .columns-image-panel-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius) var(--radius) 0 0;
+  object-fit: cover;
+}
+
+/* heading tab: teal band with navy text */
+.columns-image-panel .columns-image-panel-heading > :is(h1, h2, h3, h4, h5, h6) {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px 16px 16px 20px;
+  background-color: #aad7d7;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.columns-image-panel .columns-image-panel-content {
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.columns-image-panel .columns-image-panel-content p {
+  margin: 0 0 16px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+/* inline links in body copy */
+.columns-image-panel .columns-image-panel-content p a:any-link {
+  font-family: var(--semibold-font-family);
+  text-decoration: underline;
+}
+
+.columns-image-panel .columns-image-panel-content p a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* call to action: arrow in a 48px outlined circle followed by the link text */
+.columns-image-panel .columns-image-panel-content .columns-image-panel-cta {
+  display: flex;
+  margin: 0;
+  line-height: 25.2px;
+}
+
+main .columns-image-panel .columns-image-panel-cta a:any-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 16px 16px 16px 0;
+  padding-left: 56px;
+  font-family: var(--semibold-font-family);
+  text-decoration: none;
+}
+
+main .columns-image-panel .columns-image-panel-cta a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--saga-navy);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  transform: translateY(-50%);
+}
+
+main .columns-image-panel .columns-image-panel-cta a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 11px;
+  height: 11px;
+  border: solid var(--saga-navy);
+  border-width: 3px 3px 0 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+main .columns-image-panel .columns-image-panel-cta a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* desktop: wide photo, heading tab above its top edge, white panel overlapping it */
+@media (width >= 900px) {
+  .columns-image-panel {
+    margin-top: 80px;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .columns-image-panel > .columns-image-panel-row {
+    grid-template-rows: auto auto;
+  }
+
+  .columns-image-panel.columns-image-panel-right > .columns-image-panel-row {
+    grid-template-columns: minmax(0, 1fr) 45% 74px;
+  }
+
+  .columns-image-panel.columns-image-panel-left > .columns-image-panel-row {
+    grid-template-columns: 74px 45% minmax(0, 1fr);
+  }
+
+  .columns-image-panel .columns-image-panel-media {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    order: 0;
+  }
+
+  .columns-image-panel .columns-image-panel-media picture {
+    height: 100%;
+  }
+
+  .columns-image-panel .columns-image-panel-media img {
+    height: 100%;
+    border-radius: var(--radius);
+  }
+
+  .columns-image-panel .columns-image-panel-heading,
+  .columns-image-panel .columns-image-panel-content {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+  }
+
+  .columns-image-panel .columns-image-panel-heading {
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .columns-image-panel .columns-image-panel-heading > :is(h1, h2, h3, h4, h5, h6) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  /* navy stripe on the outer left edge of the tab */
+  .columns-image-panel .columns-image-panel-heading > :is(h1, h2, h3, h4, h5, h6)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background-color: var(--saga-navy);
+  }
+
+  .columns-image-panel .columns-image-panel-content {
+    grid-row: 2;
+    align-self: start;
+    border: 1px solid #d4d4d4;
+    border-top: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+    background-color: var(--background-color);
+  }
+}

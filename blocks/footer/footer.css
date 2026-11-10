@@ -1,20 +1,311 @@
+/* Saga global footer -- values from travel.saga.co.uk (#gn-footer-2021) computed styles */
+
+/* ---------- base (mobile) ---------- */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--saga-navy);
+  color: #fff;
+  font-family: ambit, ambit-fallback, helvetica, arial, sans-serif;
+  font-size: 18px;
+  line-height: 25.2px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* decorative marble bands */
+footer .footer-marble-top,
+footer .footer-marble-bottom {
+  background: url('./saga-marble.svg') center / cover no-repeat;
+}
+
+footer .footer-marble-top {
+  height: 100px;
+}
+
+footer .footer-marble-bottom {
+  height: 16px;
+  margin-top: 24px;
+}
+
+footer .footer-main {
+  position: relative;
+  display: flow-root;
+  box-sizing: border-box;
+  margin: -72px 0 0;
+  padding: 0 16px;
+}
+
+/* 1951 emblem in a navy, round-topped box overlapping the top band */
+footer .footer-signifer {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 152px;
+  height: 180px;
+  margin: 0 auto 40px;
+  border-radius: 100px 100px 0 0;
+  padding-top: 15px;
+  background-color: var(--saga-navy);
+}
+
+footer .footer-signifer img {
+  width: 152px;
+  height: 165px;
+}
+
+/* white SAGA logo: the navy logo file, inverted as on the source */
+footer .footer-logo a {
+  display: block;
+  width: 115px;
+  margin: 0 auto 24px;
+}
+
+footer .footer-logo img {
+  display: block;
+  width: 115px;
+  height: 32px;
+  filter: invert(1) sepia(0.96) saturate(0.15) hue-rotate(246deg) brightness(1.05) contrast(1.05);
+}
+
+/* primary links */
+footer .footer-primary {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+footer .footer-primary li {
+  margin-bottom: 16px;
+}
+
+/* horizontal rule between the primary links and the link columns */
+footer .footer-divider {
+  height: 1px;
+  margin: 32px 0;
+  background-color: #fff;
+}
+
+/* link columns: accordions on mobile, 24px apart */
+footer .footer-columns {
+  display: grid;
+  gap: 24px;
+}
+
+footer .footer-col-heading {
+  position: relative;
+  margin: 0;
+  border: 0;
+  padding: 0 26px 0 0;
+  background: none;
+  color: #aad7d7;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* chevron after the label, turning to point down when open */
+footer .footer-col-heading::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentcolor;
+  border-right: 2px solid currentcolor;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+footer .footer-col-heading[aria-expanded='true']::after {
+  transform: rotate(135deg);
+}
+
+footer .footer-col-links {
+  display: grid;
+  gap: 16px;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 18px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+footer .footer-col.open .footer-col-links {
+  max-height: 600px;
+  padding-top: 16px;
+}
+
+/* social icons and badges */
+footer .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+footer .footer-social li {
+  height: 48px;
+  margin: 32px 16px 8px 0;
+}
+
+footer .footer-social a {
+  display: block;
+}
+
+footer .footer-social img {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+footer .footer-social li:last-child img {
+  width: 172px;
+  height: 50px;
+}
+
+/* legal links: two columns on mobile; the copyright gets its own line */
+footer .footer .footer-legal {
+  display: grid;
+  grid-template-columns: 154px 1fr;
+  margin: 24px 0;
+}
+
+footer .footer-legal li {
+  padding: 0 16px 8px 0;
+}
+
+footer .footer-legal .footer-copyright {
+  display: none;
+}
+
+footer .footer .footer-copyright-mobile {
+  margin-bottom: 16px;
+  line-height: 28px;
+}
+
+footer .footer .footer-address {
+  line-height: 28px;
+}
+
+/* ---------- desktop ---------- */
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-marble-top {
+    height: 124px;
   }
+
+  footer .footer-main {
+    max-width: 1248px;
+    margin: -94px auto 0;
+  }
+
+  footer .footer-signifer {
+    width: 200px;
+    height: 264px;
+    padding: 15px 2px 0 0;
+  }
+
+  footer .footer-signifer img {
+    width: 160px;
+    height: 264px;
+  }
+
+  footer .footer-logo {
+    position: absolute;
+    top: 135px;
+    left: 15px;
+  }
+
+  footer .footer-logo a {
+    width: auto;
+    margin: 0;
+  }
+
+  footer .footer-logo img {
+    width: 145px;
+    height: 40px;
+  }
+
+  /* primary list | divider | three link columns */
+  footer .footer-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer .footer-primary,
+  footer .footer-columns {
+    flex: 0 1 486px;
+  }
+
+  footer .footer-divider {
+    width: 1px;
+    height: auto;
+    margin: 0;
+  }
+
+  footer .footer-columns {
+    display: flex;
+    gap: 0;
+  }
+
+  footer .footer-col {
+    flex: 1 1 0;
+    padding-right: 8px;
+  }
+
+  footer .footer-social li {
+    margin-bottom: 24px;
+  }
+
+  footer .footer-col-heading {
+    margin-bottom: 16px;
+    padding-right: 16px;
+    cursor: default;
+  }
+
+  footer .footer-col-heading::after {
+    display: none;
+  }
+
+  /* columns always open on desktop; no slide */
+  footer .footer-col-links,
+  footer .footer-col.open .footer-col-links {
+    max-height: none;
+    padding-top: 0;
+    overflow: visible;
+    transition: none;
+  }
+
+  footer .footer .footer-legal {
+    display: block;
+  }
+
+  footer .footer-legal li,
+  footer .footer-legal .footer-copyright {
+    display: inline-block;
+  }
+
+  footer .footer .footer-copyright-mobile {
+    display: none;
+  }
+
+  footer .footer .footer-address {
+    margin-bottom: 16px;
+  }
+}
+
+/* link hover, last so it applies over the link styles above */
+footer .footer a:hover {
+  text-decoration: underline;
 }

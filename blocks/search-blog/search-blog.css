@@ -1,0 +1,135 @@
+/* title + search form: values measured from travel.saga.co.uk/cruises/cruise-blogs.aspx */
+.search-blog .search-blog-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-blog .search-blog-heading > * {
+  margin: 0;
+}
+
+/* page title here is Ambit Semibold, not the uppercase Ambit Black article h1 */
+.search-blog .search-blog-heading h1 {
+  margin: 24px 0 8px;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 32px;
+  line-height: 32px;
+  text-transform: none;
+}
+
+.search-blog .search-blog-form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 16px;
+}
+
+.search-blog .search-blog-label {
+  display: block;
+  color: var(--saga-navy);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 25.2px;
+}
+
+.search-blog .search-blog-box {
+  display: flex;
+  align-items: stretch;
+}
+
+.search-blog .search-blog-input {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 60px;
+  margin: 0;
+  padding: 20px 50px 20px 20px;
+  border: 1px solid var(--saga-navy);
+  border-radius: var(--radius) 0 0 var(--radius);
+  background-color: var(--background-color);
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 20px;
+  appearance: none;
+}
+
+.search-blog .search-blog-input::placeholder {
+  color: #616fa7;
+  opacity: 1;
+}
+
+.search-blog .search-blog-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60px;
+  margin: 0 0 0 -1px;
+  padding: 8px 32px;
+  border: 1px solid var(--saga-navy);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background-color: var(--saga-navy);
+  color: var(--background-color);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/* results */
+.search-blog .search-blog-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-blog .search-blog-results:empty {
+  display: none;
+}
+
+.search-blog .search-blog-results.no-results {
+  display: block;
+}
+
+.search-blog .search-blog-result > a {
+  display: block;
+  height: 100%;
+  border: 1px solid #dadada;
+  color: inherit;
+  text-decoration: none;
+}
+
+.search-blog .search-blog-result-image {
+  line-height: 0;
+}
+
+.search-blog .search-blog-result-image img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.search-blog .search-blog-result-title,
+.search-blog .search-blog-result-description {
+  margin: 16px;
+}
+
+@media (width >= 900px) {
+  /* source: 7/12 + 5/12 bootstrap columns with 30px gutter */
+  .search-blog .search-blog-top {
+    display: grid;
+    grid-template-columns: calc(7 / 12 * (100% + 30px) - 30px) 1fr;
+    column-gap: 30px;
+    align-items: start;
+  }
+
+  .search-blog .search-blog-heading h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}

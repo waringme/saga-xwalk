@@ -1,0 +1,399 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://travel.saga.co.uk/cruises"
+      ],
+      "coverageGaps": [],
+      "description": "Brand home page with a hero banner, cruise finder search, promo columns, awards carousel, membership accordion and newsletter signup",
+      "blocks": [
+        {
+          "name": "notice-banner",
+          "instances": [
+            "#dmpg-banner"
+          ]
+        },
+        {
+          "name": "breadcrumb-contact-bar",
+          "instances": [
+            ".breadcrumbUtilityContainer .breadcrumbUtility > .container"
+          ]
+        },
+        {
+          "name": "hero-landing",
+          "instances": [
+            "#slider"
+          ]
+        },
+        {
+          "name": "cruise-finder",
+          "instances": [
+            "#searchControl"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".podBlock .grouper-pod:not(#whichForMob):not(:has(.componentCard)):has(img)",
+            ".podBlock .componentCard.fullWidth"
+          ]
+        },
+        {
+          "name": "carousel-awards",
+          "instances": [
+            ".carouselLogo .owl-carousel"
+          ]
+        },
+        {
+          "name": "columns-image-panel",
+          "instances": [
+            ".fullwidthimageComponent"
+          ]
+        },
+        {
+          "name": "newsletter-signup",
+          "instances": [
+            "#email-only-banner"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "notice-banner",
+          "selector": [
+            "#dmpg-banner-wrap"
+          ],
+          "style": "light-green",
+          "blocks": [
+            "notice-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "breadcrumb-contact-bar",
+          "selector": [
+            ".breadcrumbUtilityContainer"
+          ],
+          "style": "light-teal",
+          "blocks": [
+            "breadcrumb-contact-bar"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "hero-and-cruise-finder",
+          "selector": [
+            "#slider"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-landing",
+            "cruise-finder"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "promo-offers",
+          "selector": [
+            ".podBlock > .row > div:nth-child(2)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "intro",
+          "selector": [
+            ".podBlock > .row > .pod12x2"
+          ],
+          "style": "centered",
+          "blocks": [],
+          "defaultContent": [
+            ".podBlock .intro-pod"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "awards",
+          "selector": [
+            ".podBlock > .row > .cruise-section:has(.carouselLogo)"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-awards"
+          ],
+          "defaultContent": [
+            ".carouselLogo > h3",
+            ".podBlock .button-pod"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "image-panels",
+          "selector": [
+            ".podBlock > .row > .cruise-section:has(.fullwidthimageComponent)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-image-panel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "love-it-guarantee",
+          "selector": [
+            ".podBlock > .row > div:nth-child(9)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "important-information",
+          "selector": [
+            ".insurance-notification"
+          ],
+          "style": "light-grey",
+          "blocks": [],
+          "defaultContent": [
+            ".insurance-notification > div"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "newsletter",
+          "selector": [
+            "#email-only-banner"
+          ],
+          "style": null,
+          "blocks": [
+            "newsletter-signup"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-11",
+          "name": "facebook",
+          "selector": [
+            ".podBlock > .row > .componentCard.fullWidth"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "blog-landing",
+      "urls": [
+        "https://travel.saga.co.uk/cruises/cruise-blogs.aspx"
+      ],
+      "coverageGaps": [],
+      "description": "Section landing page with a page title and keyword search, followed by a grid of article teaser cards and promo columns",
+      "blocks": [
+        {
+          "name": "notice-banner",
+          "instances": [
+            "#dmpg-banner"
+          ]
+        },
+        {
+          "name": "breadcrumb-contact-bar",
+          "instances": [
+            ".breadcrumbUtilityContainer .breadcrumbUtility > .container"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            ".podBlock .grouper-pod",
+            ".blogentries"
+          ]
+        },
+        {
+          "name": "blog-filter",
+          "instances": [
+            "#mobileFilters ul.pills"
+          ]
+        },
+        {
+          "name": "search-blog",
+          "instances": [
+            "#mobileFilters > .row.mb-3.text-left"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "notice-banner",
+          "selector": [
+            "#dmpg-banner-wrap"
+          ],
+          "style": "light-green",
+          "blocks": [
+            "notice-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "breadcrumb-contact-bar",
+          "selector": [
+            ".breadcrumbUtilityContainer"
+          ],
+          "style": "light-teal",
+          "blocks": [
+            "breadcrumb-contact-bar"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "intro-and-category-tiles",
+          "selector": [
+            ".contentHolder .blockHolder"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".podBlock .intro-pod"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "filters-and-search",
+          "selector": [
+            ".filtersWrapper"
+          ],
+          "style": null,
+          "blocks": [
+            "blog-filter",
+            "search-blog"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "article-listing",
+          "selector": [
+            ".outerRow .col-12:has(> .blogentries)"
+          ],
+          "style": "centered-text",
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".blogCount",
+            "#loadMore"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "blog-article",
+      "urls": [
+        "https://travel.saga.co.uk/cruises/cruise-blogs/destinations/ocean/british-isles/explore-vibrant-ports-scenery-british-isles-cruise.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/destinations/rivers/danube/sagas-wachau-valley-to-vienna-cruise-will-be-a-highlight.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/celebrity-guests/david-domoney-visits-canaries-gardens.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/celebrity-guests/stellar-line-up-of-entertainment.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/onboard/a-day-in-the-life-of-captain-simon-moore.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/ocean/onboard/the-extra-mile-saga-cruises-hate-hidden-costs.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/experiences/rivers/ships/celebrating-spirit-of-the-rhine.aspx",
+        "https://travel.saga.co.uk/cruises/cruise-blogs/travel-advice/rivers/new-to-cruising/magic-of-a-mini-river-cruise.aspx"
+      ],
+      "coverageGaps": [],
+      "description": "Long-form article page with body copy and images, closed by a row of related article cards",
+      "blocks": [
+        {
+          "name": "notice-banner",
+          "instances": [
+            "#dmpg-banner"
+          ]
+        },
+        {
+          "name": "breadcrumb-contact-bar",
+          "instances": [
+            ".breadcrumbUtilityContainer .breadcrumbUtility > .container"
+          ]
+        },
+        {
+          "name": "cards-cruise",
+          "instances": [
+            ".megaBlogEntry .app-GalleryWidget .owl-carousel"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            ".relatedBlogs ul.list-unstyled"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "notice-banner",
+          "selector": [
+            "#dmpg-banner-wrap"
+          ],
+          "style": "light-green",
+          "blocks": [
+            "notice-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "breadcrumb-contact-bar",
+          "selector": [
+            ".breadcrumbUtilityContainer"
+          ],
+          "style": "light-teal",
+          "blocks": [
+            "breadcrumb-contact-bar"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "article",
+          "selector": [
+            ".megaBlogEntry"
+          ],
+          "style": "article",
+          "blocks": [
+            "cards-cruise",
+            "cards-article"
+          ],
+          "defaultContent": [
+            ".megaBlogEntry > .container.mb-4",
+            ".megaBlogEntry > .container:nth-of-type(2)",
+            ".megaBlogEntry .app-GalleryWidget > h3.header",
+            ".relatedBlogs > h3",
+            ".relatedBlogs > a.linkCircle"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "projectType": "xwalk"
+  }
+}
