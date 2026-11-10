@@ -113,6 +113,6 @@ export default function parse(element, { document }) {
     if (row.length) cells.push(row);
   }
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'columns-promo', cells });
+  const block = WebImporter.Blocks.createBlock(document, { name: 'columns', variants: ['promo'], cells });
   element.replaceWith(block);
 }

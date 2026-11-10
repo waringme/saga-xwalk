@@ -1,13 +1,13 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 /**
- * Image panel: a full-width photo with a heading tab above the photo edge and a
+ * Columns (imagepanel) variant: a full-width photo with a heading tab above the photo edge and a
  * text panel overlapping the photo on one side.
  * Content model: one row with an image cell and a text cell. The cell order sets the
  * panel side: [image | text] = panel on the right, [text | image] = panel on the left.
  * @param {Element} block The block element
  */
-export default function decorate(block) {
+export default function decorateImagePanel(block) {
   const row = block.firstElementChild;
   if (!row) return;
   row.classList.add('columns-image-panel-row');

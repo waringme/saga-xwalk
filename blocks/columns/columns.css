@@ -1,33 +1,440 @@
-.columns > div {
+.columns:not(.promo, .imagepanel) > div {
   display: flex;
   flex-direction: column;
 }
 
-.columns img {
+.columns:not(.promo, .imagepanel) img {
   width: 100%;
 }
 
-.columns > div > div {
+.columns:not(.promo, .imagepanel) > div > div {
   order: 1;
 }
 
-.columns > div > .columns-img-col {
+.columns:not(.promo, .imagepanel) > div > .columns-img-col {
   order: 0;
 }
 
-.columns > div > .columns-img-col img {
+.columns:not(.promo, .imagepanel) > div > .columns-img-col img {
   display: block;
 }
 
 @media (width >= 900px) {
-  .columns > div {
+  .columns:not(.promo, .imagepanel) > div {
     align-items: center;
     flex-direction: unset;
     gap: 24px;
   }
 
-  .columns > div > div {
+  .columns:not(.promo, .imagepanel) > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* The variants below never apply to the same element as each other or as the default
+   columns rules (one class per block), so selector order across them does not matter. */
+/* stylelint-disable no-descending-specificity */
+
+/* Variant: columns (promo) -- values from travel.saga.co.uk computed styles */
+
+/* promo row: side-by-side offers (image, centred heading, text, button, link) */
+.columns.promo > .columns-promo-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 -15px;
+}
+
+.columns.promo .columns-promo-col {
+  box-sizing: border-box;
+  padding: 40px 50px;
+  text-align: center;
+}
+
+.columns.promo .columns-promo-col > :last-child {
+  margin-bottom: 0;
+}
+
+.columns.promo .columns-promo-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.columns.promo .columns-promo-col .columns-promo-image {
+  margin: 0 -15px;
+  line-height: 0;
+}
+
+.columns.promo .columns-promo-image img {
+  border-radius: var(--radius);
+}
+
+.columns.promo .columns-promo-col h3 {
+  margin: 0 0 8px;
+  padding-top: 20px;
+  line-height: 24px;
+}
+
+.columns.promo .columns-promo-col p {
+  margin: 0 0 16px;
+}
+
+/* inline links in body copy */
+.columns.promo .columns-promo-col p a:any-link {
+  font-family: var(--semibold-font-family);
+  text-decoration: underline;
+}
+
+.columns.promo .columns-promo-col p a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* primary call to action: navy button */
+.columns.promo .columns-promo-col .columns-promo-primary {
+  margin: 21px 0 0;
+}
+
+main .columns.promo .columns-promo-primary a:any-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 32px;
+  border: 1px solid var(--saga-navy);
+  border-radius: var(--radius);
+  background-color: var(--saga-navy);
+  color: var(--background-color);
+  font-family: var(--semibold-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+main .columns.promo .columns-promo-primary a:hover,
+main .columns.promo .columns-promo-primary a:focus-visible {
+  background-color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+.columns.promo .columns-promo-col .columns-promo-primary + p {
+  margin-top: 10px;
+}
+
+/* secondary link: plain navy semibold text */
+.columns.promo .columns-promo-secondary {
+  line-height: 25.2px;
+}
+
+main .columns.promo .columns-promo-secondary a:any-link {
+  font-family: var(--semibold-font-family);
+  text-decoration: none;
+}
+
+main .columns.promo .columns-promo-secondary a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* card row: grey image + text card */
+.columns.promo > .columns-promo-card {
+  margin: 0;
+  border-radius: var(--radius);
+  background-color: var(--saga-light-grey);
+  overflow: hidden;
+}
+
+.columns.promo .columns-promo-card .columns-promo-col {
+  padding: 16px;
+  text-align: left;
+}
+
+.columns.promo .columns-promo-card .columns-promo-img-col {
+  padding: 0;
+  line-height: 0;
+}
+
+.columns.promo .columns-promo-card .columns-promo-img-col picture {
+  display: block;
+  height: 100%;
+}
+
+.columns.promo .columns-promo-card .columns-promo-img-col img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.columns.promo .columns-promo-card .columns-promo-col h3 {
+  margin: 16px 0 8px;
+  padding: 0;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+/* single call to action: arrow in a circle followed by the link text */
+.columns.promo .columns-promo-col .columns-promo-link {
+  margin-bottom: 16px;
+  line-height: 25.2px;
+}
+
+main .columns.promo .columns-promo-link a:any-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 16px;
+  padding-left: 56px;
+  font-family: var(--semibold-font-family);
+  text-decoration: none;
+}
+
+main .columns.promo .columns-promo-link a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--saga-navy);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  transform: translateY(-50%);
+}
+
+main .columns.promo .columns-promo-link a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 11px;
+  height: 11px;
+  border: solid var(--saga-navy);
+  border-width: 3px 3px 0 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+main .columns.promo .columns-promo-link a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+@media (width >= 900px) {
+  /* -15px row margins widen the 1110px content column to the source's 1140px row */
+  .columns.promo > .columns-promo-row {
+    flex-direction: row;
+  }
+
+  .columns.promo .columns-promo-col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .columns.promo .columns-promo-col h3 {
+    line-height: 40px;
+  }
+
+  main .columns.promo .columns-promo-primary a:any-link {
+    display: inline-flex;
+    width: auto;
+  }
+
+  .columns.promo .columns-promo-card .columns-promo-col {
+    flex: 0 0 50%;
+    padding: 16px 32px;
+  }
+
+  .columns.promo .columns-promo-card .columns-promo-img-col {
+    padding: 0;
+  }
+}
+
+/* Variant: columns (imagepanel) -- values from travel.saga.co.uk (.fullwidthimageComponent) computed styles */
+
+/* mobile: a bordered card -- photo, heading tab, then the text */
+.columns.imagepanel {
+  margin-top: 40px;
+  border: 1px solid #d4d4d4;
+  border-radius: var(--radius);
+}
+
+.columns.imagepanel > .columns-image-panel-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.columns.imagepanel .columns-image-panel-media {
+  order: -1;
+  line-height: 0;
+}
+
+.columns.imagepanel .columns-image-panel-media p {
+  margin: 0;
+}
+
+.columns.imagepanel .columns-image-panel-media picture {
+  display: block;
+}
+
+.columns.imagepanel .columns-image-panel-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius) var(--radius) 0 0;
+  object-fit: cover;
+}
+
+/* heading tab: teal band with navy text */
+.columns.imagepanel .columns-image-panel-heading > :is(h1, h2, h3, h4, h5, h6) {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px 16px 16px 20px;
+  background-color: #aad7d7;
+  color: var(--saga-navy);
+  font-family: var(--semibold-font-family);
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.columns.imagepanel .columns-image-panel-content {
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.columns.imagepanel .columns-image-panel-content p {
+  margin: 0 0 16px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+/* inline links in body copy */
+.columns.imagepanel .columns-image-panel-content p a:any-link {
+  font-family: var(--semibold-font-family);
+  text-decoration: underline;
+}
+
+.columns.imagepanel .columns-image-panel-content p a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* call to action: arrow in a 48px outlined circle followed by the link text */
+.columns.imagepanel .columns-image-panel-content .columns-image-panel-cta {
+  display: flex;
+  margin: 0;
+  line-height: 25.2px;
+}
+
+main .columns.imagepanel .columns-image-panel-cta a:any-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 16px 16px 16px 0;
+  padding-left: 56px;
+  font-family: var(--semibold-font-family);
+  text-decoration: none;
+}
+
+main .columns.imagepanel .columns-image-panel-cta a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--saga-navy);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  transform: translateY(-50%);
+}
+
+main .columns.imagepanel .columns-image-panel-cta a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 11px;
+  height: 11px;
+  border: solid var(--saga-navy);
+  border-width: 3px 3px 0 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+main .columns.imagepanel .columns-image-panel-cta a:hover {
+  text-decoration: underline 2px var(--link-hover-underline-color);
+}
+
+/* desktop: wide photo, heading tab above its top edge, white panel overlapping it */
+@media (width >= 900px) {
+  .columns.imagepanel {
+    margin-top: 80px;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .columns.imagepanel > .columns-image-panel-row {
+    grid-template-rows: auto auto;
+  }
+
+  .columns.imagepanel.columns-image-panel-right > .columns-image-panel-row {
+    grid-template-columns: minmax(0, 1fr) 45% 74px;
+  }
+
+  .columns.imagepanel.columns-image-panel-left > .columns-image-panel-row {
+    grid-template-columns: 74px 45% minmax(0, 1fr);
+  }
+
+  .columns.imagepanel .columns-image-panel-media {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    order: 0;
+  }
+
+  .columns.imagepanel .columns-image-panel-media picture {
+    height: 100%;
+  }
+
+  .columns.imagepanel .columns-image-panel-media img {
+    height: 100%;
+    border-radius: var(--radius);
+  }
+
+  .columns.imagepanel .columns-image-panel-heading,
+  .columns.imagepanel .columns-image-panel-content {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+  }
+
+  .columns.imagepanel .columns-image-panel-heading {
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .columns.imagepanel .columns-image-panel-heading > :is(h1, h2, h3, h4, h5, h6) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  /* navy stripe on the outer left edge of the tab */
+  .columns.imagepanel .columns-image-panel-heading > :is(h1, h2, h3, h4, h5, h6)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background-color: var(--saga-navy);
+  }
+
+  .columns.imagepanel .columns-image-panel-content {
+    grid-row: 2;
+    align-self: start;
+    border: 1px solid #d4d4d4;
+    border-top: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+    background-color: var(--background-color);
   }
 }

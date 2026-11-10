@@ -33,6 +33,27 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "Variant",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Promo",
+              "value": "promo"
+            },
+            {
+              "name": "Image panel",
+              "value": "imagepanel"
+            }
+          ]
         }
       ]
     }

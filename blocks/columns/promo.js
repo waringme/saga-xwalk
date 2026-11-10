@@ -1,12 +1,12 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 /**
- * Promo columns: side-by-side offers, each column holding an image, heading, text,
+ * Columns (promo) variant: side-by-side offers, each column holding an image, heading, text,
  * a primary call to action and an optional secondary link.
  * Every row is a set of columns; a picture-only cell becomes the column image.
  * @param {Element} block The block element
  */
-export default function decorate(block) {
+export default function decoratePromo(block) {
   const cols = [...(block.firstElementChild?.children || [])];
   block.classList.add(`columns-promo-${cols.length}-cols`);
 

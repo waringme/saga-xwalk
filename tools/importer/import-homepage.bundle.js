@@ -382,7 +382,7 @@ var CustomImportScript = (() => {
       });
       if (row.length) cells.push(row);
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-promo", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "columns", variants: ["promo"], cells });
     element.replaceWith(block);
   }
 
@@ -487,7 +487,7 @@ var CustomImportScript = (() => {
     });
     const panelRight = element.classList.contains("contentRight");
     cells.push(panelRight ? [imageCell, textCell] : [textCell, imageCell]);
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-image-panel", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "columns", variants: ["imagepanel"], cells });
     element.replaceWith(block);
   }
 

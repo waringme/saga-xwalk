@@ -21,8 +21,6 @@
       "cards-article",
       "cards-cruise",
       "carousel-awards",
-      "columns-promo",
-      "columns-image-panel",
       "cruise-finder",
       "hero-landing",
       "newsletter-signup",
@@ -52,18 +50,6 @@
     "id": "carousel-awards",
     "components": [
       "carousel-awards-item"
-    ]
-  },
-  {
-    "id": "columns-image-panel",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "columns-promo",
-    "components": [
-      "column"
     ]
   },
   {

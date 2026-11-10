@@ -65,6 +65,6 @@ export default function parse(element, { document }) {
   const panelRight = element.classList.contains('contentRight');
   cells.push(panelRight ? [imageCell, textCell] : [textCell, imageCell]);
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'columns-image-panel', cells });
+  const block = WebImporter.Blocks.createBlock(document, { name: 'columns', variants: ['imagepanel'], cells });
   element.replaceWith(block);
 }
