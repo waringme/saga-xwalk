@@ -200,6 +200,9 @@ export default async function decorate(block) {
   const brand = el('div', 'nav-brand');
   const logoLink = brandSrc?.querySelector('a');
   if (logoLink) {
+    // the logo image is authored beside its link: put it inside the link
+    const logo = brandSrc.querySelector('img');
+    if (logo && !logoLink.contains(logo)) logoLink.replaceChildren(logo);
     logoLink.setAttribute('aria-label', logoLink.querySelector('img')?.alt || 'Home');
     brand.append(logoLink);
   }
@@ -219,6 +222,9 @@ export default async function decorate(block) {
     text.forEach((n) => n.remove());
     toolLink.append(el('span', 'nav-account-label', labelText));
     toolLink.setAttribute('aria-label', labelText);
+    // the icon is authored beside its link: put it inside the link, before the label
+    const icon = toolsSrc.querySelector('img');
+    if (icon && !toolLink.contains(icon)) toolLink.prepend(icon);
     tools.append(toolLink);
   }
 

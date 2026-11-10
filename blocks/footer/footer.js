@@ -62,10 +62,12 @@ export default async function decorate(block) {
 
   const main = el('div', 'footer-main');
   if (brand) {
-    const [logoP, emblemP] = [...brand.querySelectorAll('p')];
-    const logoLink = logoP?.querySelector('a');
+    // logo image, its link, then the emblem image (images are authored beside links)
+    const logoLink = brand.querySelector('a');
+    const [logo, emblem] = [...brand.querySelectorAll('img')];
+    if (logoLink && logo && !logoLink.contains(logo)) logoLink.replaceChildren(logo);
     if (logoLink) logoLink.setAttribute('aria-label', logoLink.querySelector('img')?.alt || 'Home');
-    if (emblemP) main.append(el('div', 'footer-signifer', emblemP.querySelector('img')));
+    if (emblem) main.append(el('div', 'footer-signifer', emblem));
     if (logoLink) main.append(el('div', 'footer-logo', logoLink));
   }
 
